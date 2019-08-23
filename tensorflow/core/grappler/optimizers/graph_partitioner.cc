@@ -104,7 +104,7 @@ static bool IsSwappable(GraphView::InputPort input) {
 void PartitionGraph(GraphDef* graph,
                     const std::unordered_map<string, DeviceProperties> &devices,
                     std::unordered_map<int32, std::vector<NodeDef*>> *node_partitions) {
-  const size_t kPartitionSize = 10;
+  const size_t kPartitionSize = std::atoi(std::getenv("KPART"));
 
   SimpleGraphView graph_view;
   CHECK(graph_view.Initialize(*graph).ok());

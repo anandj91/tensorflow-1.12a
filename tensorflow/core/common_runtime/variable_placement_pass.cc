@@ -57,6 +57,7 @@ void PlaceNodeOnCPU(Node* node) {
 
 Status
 VariablePlacementPass::Run(const GraphOptimizationPassOptions& options) {
+  return Status::OK();
   if (options.partition_graphs != nullptr) {
     return errors::Internal(
         "Variable placement should happen before partitioning.");
